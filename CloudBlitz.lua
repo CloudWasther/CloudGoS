@@ -1,6 +1,23 @@
 if myHero.charName ~= "Blitzcrank" then return end -- Hero
 
 --Local
+
+function SetMovement(bool)
+	if _G.EOWLoaded then
+		EOW:SetMovements(bool)
+		EOW:SetAttacks(bool)
+	elseif _G.SDK then
+		_G.SDK.Orbwalker:SetMovement(bool)
+		_G.SDK.Orbwalker:SetAttack(bool)
+	else
+		GOS.BlockMovement = not bool
+		GOS.BlockAttack = not bool
+	end
+	if bool then
+		castSpell.state = 0
+	end
+end
+
 local function GetDistanceSqr(p1, p2)
     local p2 = p2 or myHero
     local dx = p1.x - p2.x
