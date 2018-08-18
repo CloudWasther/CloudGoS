@@ -61,6 +61,16 @@ function CloudBT:Loading()
     --Load Game
     Callback.Add("Tick", function() self:OnPressTick() end)
     Callback.Add("Draw", function() self:OnDraw() end)
+    local ORb = ""
+	if _G.SDK then
+		ORb = "IC'S orbwalker"		
+	elseif _G.EOW then
+		ORb = "EOW"	
+	elseif _G.GOS then
+		ORb = "Noddy orbwalker"
+	else
+		ORb = "Orbwalker not found"
+	end
 end 
 
 function CloudBT:SpellPronto()
@@ -73,6 +83,7 @@ function CloudBT:OnPressTick()
     if self.MenuBT.CBK.CKey:Value() then
         ComboBlitz()
     end 
+
 end 
 
 function CloudBT:ComboBlitz()
