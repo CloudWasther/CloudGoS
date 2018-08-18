@@ -1,7 +1,7 @@
 if myHero.charName ~= "Blitzcrank" then return end -- Hero
 
 --Local
-
+local castSpell = {state = 0, tick = GetTickCount(), casting = GetTickCount() - 1000, mouse = mousePos} --Ty
 function SetMovement(bool)
 	if _G.EOWLoaded then
 		EOW:SetMovements(bool)
