@@ -74,7 +74,7 @@ function CloudBT:ComboBlitz()
                             WT[IsEnd.charName] = true
                         end
                     end
-                    if IsValidTarget(QCombo, 910) and  QCombo:GetCollision(70, 1800, 0.25) == 0 then
+                   if IsValidTarget(QCombo, 910) and WT[QCombo.charName] and  QCombo:GetCollision(70, 1800, 0.25) == 0 then
                         Control.CastSpell(HK_Q, QPrediction)
                     end 
                 end 
